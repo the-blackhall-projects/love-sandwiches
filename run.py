@@ -46,4 +46,26 @@ print()
 for i in range(26):
     print(chr(0x41+i), end="")
 
+
+
+from itertools import chain, combinations
+from functools import reduce
+
+def product(lst):
+    return reduce(lambda x,y: x*y, lst, 1)
+
+def powerset(iterable):
+    xs = list(iterable)
+    return chain.from_iterable(
+        combinations(xs,n) for n in range(len(xs)+1)
+    )
+
+N = 5
+# The first N Fermat numbers
+F = [2**(2**i)+1 for i in range(N)]
+
+s = {product(x) for x in powerset(F)}
+for f in sorted(s):
+    print(format(f, 'b'))    
+
 print("\n")
