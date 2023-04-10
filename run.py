@@ -23,3 +23,27 @@ data = sales.get_all_values()
 
 print(data, "\n")
 os.system('clear')
+
+
+# Letter frequencies via
+# http://www.norvig.com/mayzner.html
+freq = [ 
+  8.04, 1.48, 3.34, 3.82, 12.49,
+  2.40, 1.87, 5.05, 7.57,  0.16,
+  0.54, 4.07, 2.51, 7.23,  7.64,
+  2.14, 0.12, 6.28, 6.51,  9.28,
+  2.73, 1.05, 1.68, 0.23,  1.66,
+  0.09,
+]
+m = max(freq)
+
+for i in range(26):
+    u = int(8*freq[i]/m)
+    ch = chr(0x2580+u) if u > 0 else " "
+    print(ch, end="")
+
+print()
+for i in range(26):
+    print(chr(0x41+i), end="")
+
+print("\n")
