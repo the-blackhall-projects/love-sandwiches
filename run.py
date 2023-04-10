@@ -66,6 +66,38 @@ F = [2**(2**i)+1 for i in range(N)]
 
 s = {product(x) for x in powerset(F)}
 for f in sorted(s):
-    print(format(f, 'b'))    
+    print(format(f, 'b'))  
+
+import sys
+
+chars = {
+    'a': '┌',
+    'b': '┐',
+    'c': '┘',
+    'd': '└',
+    'e': '─',
+    'f': '│',
+    'g': '┴',
+    'h': '├',
+    'i': '┬',
+    'j': '┤',
+    'k': '╷',
+    'l': '┼',
+}
+ 
+logo = """
+aeeb     aeeb
+fabf     faec
+fdcheiieejf aeeieeb
+faejaljkkff fabfkkf
+ff fffffffdejdcffff
+dc dcdggggeegeegggc
+"""
+ 
+for c in logo:
+        if c in chars:
+            sys.stdout.write(chars[c])
+        else:
+            sys.stdout.write(c)
 
 print("\n")
