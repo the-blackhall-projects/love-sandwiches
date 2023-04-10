@@ -3,6 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import gspread
 from google.oauth2.service_account import Credentials
+import os
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -20,4 +21,5 @@ sales = SHEET.worksheet("sales")
 data = sales.get_all_values()
 
 
-print(data, "\n");
+print(data, "\n")
+os.system('clear')
